@@ -1,0 +1,53 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="description" content><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Sign In with ASuite</title><link rel="shortcut icon" href="https://cdn.asuite.org/assets/asuite.auth0.com/favicon.png"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600|Product+Sans:400" rel="stylesheet"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link rel="stylesheet" href="https://cdn.asuite.org/assets/asuite.auth0.com/style-login-page.css"><link rel="stylesheet" href="https://cdn.asuite.org/assets/asuite.auth0.com/style.css?s=2"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><style>
+/* Center the loader */
+#loader {
+  z-index: 1;
+background-image: url(https://user-images.githubusercontent.com/2671660/27986068-7a0040d6-63f9-11e7-8e54-dcb220e42fd7.gif)
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+}
+</style></head><body onload="myFunction()" style="margin:0;">
+
+<div class="board"><div id="notificationbar"></div><div class="board-text"><h1 class="board-text-heading">Text</h1><p class="board-text-paragraph">Text</p><a class="board-text-link" href="#">Text</a></div></div><div class="container"><div id="notificationbar-mobile"></div><div id="loader"></div><div class="authentication animate-bottom" style="display:none;" id="myDiv"><div class="logo"><a href="https://www.asuite.org"><svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 102.477 88.692" width="102.477" height="88.692"><defs><clipPath id="_clipPath_kG0HgV17MvLOy35ghn1vYhB6MSrijCVR"><rect width="102.477" height="88.692"/></clipPath></defs><g clip-path="url(#_clipPath_kG0HgV17MvLOy35ghn1vYhB6MSrijCVR)"><g id="Group"/><g id="Group"><path d=" M 0.538 17.505 L 29.94 0.53 C 30.657 0.116 31.821 0.116 32.538 0.53 L 47.239 9.018 L 15.239 27.493 L 0.538 19.005 C -0.179 18.591 -0.179 17.919 0.538 17.505 Z " fill="rgb(0,0,0)"/><path d=" M 55.239 8.798 L 87.239 27.273 L 101.94 18.786 C 102.657 18.372 102.657 17.7 101.94 17.286 L 72.538 0.31 C 71.821 -0.103 70.657 -0.103 69.94 0.31 L 55.239 8.798 Z " fill="rgb(0,0,0)"/><path d=" M 51.239 11.327 L 83.239 29.802 L 51.239 48.278 L 19.239 29.802 L 51.239 11.327 Z " fill="rgb(0,0,0)"/><path d=" M 49.239 54.051 L 33.085 63.986 C 32.38 64.419 31.225 64.436 30.508 64.022 L 15.239 55.206 L 15.239 66.062 C 15.239 67.718 16.211 69.624 17.409 70.315 L 49.239 88.692" fill="rgb(0,0,0)"/><path d=" M 15.239 32.112 L 0.538 40.599 C -0.179 41.013 -0.179 41.686 0.538 42.099 L 29.94 59.075 C 30.657 59.489 31.821 59.489 32.538 59.075 L 47.239 50.587 L 15.239 32.112 Z " fill="rgb(0,0,0)"/><path d=" M 87.239 55.206 L 72.538 63.693 C 71.821 64.107 70.657 64.107 69.94 63.693 L 53.239 54.051 L 53.239 88.692 L 84.641 70.562 C 86.075 69.734 87.239 67.718 87.239 66.062 L 87.239 55.206 Z " fill="rgb(0,0,0)"/><path d=" M 55.239 50.587 L 87.239 32.112 L 101.94 40.599 C 102.657 41.013 102.657 41.686 101.94 42.099 L 72.538 59.075 C 71.821 59.489 70.657 59.489 69.94 59.075 L 55.239 50.587 Z " fill="rgb(0,0,0)"/></g></g></svg></a></div><h1 class="title">Sign in</h1><p class="message-signup">Don't have an account? <a href="https://accounts.asuite.org/signup/" class="link">Signup for free</a></p><div id="error-message" class="alert alert-danger"></div><form class="signin" onsubmit="return!1" method="post"><div class="form-group"><label class="form-label">Email address</label><input id="email" class="form-input" autocomplete="false" type="email" autofocus required></div><div class="form-group"><label class="form-label-left">Password</label><div class="help"><img src="https://cdn.asuite.org/assets/asuite.auth0.com/v2/eye.svg" onclick="myFunction()" class="wid-20"></div><input id="password" class="form-input" autocomplete="false" type="password" required></div><button id="btn-login" type="submit" class="form-button">Sign in</button><label class="centered mt-40"><input type="checkbox"> Keep me signed in</label></form><div class="centered mt-15"><a class="link fs-16 mr-5" id="forgot-password-link" href="https://accounts.asuite.org/recovery/">Forgot password? </a>- <a class="link fs-16 ml-5 cp" id="btn-organization">Sign in with SSO</a></div><p class="information">© 2018. This is a secure authentication area subject to the ASuite General <a href="https://go.asuite.org/ZvuBPe" class="link" target="_blank">Terms of Service</a> and <a href="https://go.asuite.org/hmgZPy" class="link" target="_blank">Privacy Policy</a>.</p></div></div><!--[if IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script><![endif]--><!--[if lte IE 9]><script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script><script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script><![endif]--><script src="https://cdn.auth0.com/js/auth0/9.2/auth0.min.js"></script><script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script><script>window.addEventListener("load",function(){var e=JSON.parse(decodeURIComponent(escape(window.atob("@@config@@")))),t=Object.assign({domain:e.auth0Domain,clientID:e.clientID,redirectUri:e.callbackURL,responseType:"code"},e.internalOptions),n=new auth0.WebAuth(t),o="Username-Password-Authentication";function i(e){var t=document.getElementById("error-message");t.innerHTML=e.description,t.style.display="block"}document.getElementById("btn-login").addEventListener("click",function(e){e.preventDefault();var t=document.getElementById("email").value,a=document.getElementById("password").value;n.login({realm:o,username:t,password:a},function(e){e&&i(e)})}),document.getElementById("btn-organization").addEventListener("click",function(){n.authorize({connection:"Organization"},function(e){e&&i(e)})})}),$("#forgot-password-link").click(function(){return window.location.href="https://accounts.asuite.org/recovery/?email="+document.getElementById("email").value,!1}),$("#notificationbar").html('<object data="https://cdn.asuite.org/assets/asuite.auth0.com/notice.html" />'),$("#notificationbar-mobile").html('<object data="https://cdn.asuite.org/assets/asuite.auth0.com/notice-mobile.html" />')</script><script src="https://cdn.asuite.org/assets/asuite.auth0.com/main.js"></script><script src="//d2wy8f7a9ursnm.cloudfront.net/v4/bugsnag.min.js"></script><script>window.bugsnagClient=bugsnag("9ef097833378b3629ca35ed1f2149f7d")</script><script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 50);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script></body></html>
